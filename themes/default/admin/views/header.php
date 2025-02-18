@@ -1217,15 +1217,13 @@
                             <?php
                             } ?>
 
-<li class="mm_auth mm_customers mm_suppliers mm_billers">
+                            <li class="mm_auth mm_customers mm_suppliers mm_billers">
                                 <a class="dropmenu" href="#">
                                 <i class="fa fa-users"></i>
                                 <span class="text"> <?= lang('people'); ?> </span>
                                 <span class="chevron closed"></span>
                                 </a>
                                 <ul>
-                                    <?php if (!$Owner) {
-                                ?>
                                     <li id="auth_users">
                                         <a class="submenu" href="<?= admin_url('users'); ?>">
                                             <i class="fa fa-users"></i><span class="text"> <?= lang('list_users'); ?></span>
@@ -1236,10 +1234,53 @@
                                             <i class="fa fa-user-plus"></i><span class="text"> <?= lang('new_user'); ?></span>
                                         </a>
                                     </li>
-                                    <?php
-                            } ?>
                                 </ul>
                             </li>
+
+                            <li class="mm_system_settings <?= strtolower($this->router->fetch_method()) == 'sales' ? '' : 'mm_pos' ?>">
+                                    <a class="dropmenu" href="#">
+                                        <i class="fa fa-cog"></i><span class="text"> <?= lang('settings'); ?> </span>
+                                        <span class="chevron closed"></span>
+                                    </a>
+                                    <ul>
+                                        <li id="system_settings_index">
+                                            <a href="<?= admin_url('system_settings') ?>">
+                                                <i class="fa fa-cogs"></i><span class="text"> <?= lang('system_settings'); ?></span>
+                                            </a>
+                                        </li>
+
+                                        <li id="system_settings_categories">
+                                            <a href="<?= admin_url('system_settings/categories') ?>">
+                                                <i class="fa fa-folder-open"></i><span class="text"> <?= lang('categories'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li id="system_settings_units">
+                                            <a href="<?= admin_url('system_settings/units') ?>">
+                                                <i class="fa fa-wrench"></i><span class="text"> <?= lang('units'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li id="system_settings_brands">
+                                            <a href="<?= admin_url('system_settings/brands') ?>">
+                                                <i class="fa fa-th-list"></i><span class="text"> <?= lang('brands'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li id="system_settings_variants">
+                                            <a href="<?= admin_url('system_settings/variants') ?>">
+                                                <i class="fa fa-tags"></i><span class="text"> <?= lang('variants'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li id="system_settings_warehouses">
+                                            <a href="<?= admin_url('system_settings/warehouses') ?>">
+                                                <i class="fa fa-building-o"></i><span class="text"> <?= lang('warehouses'); ?></span>
+                                            </a>
+                                        </li>
+                                        <li id="system_settings_user_groups">
+                                            <a href="<?= admin_url('system_settings/user_groups') ?>">
+                                                <i class="fa fa-key"></i><span class="text"> <?= lang('group_permissions'); ?></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
 
                             <?php if ($GP['customers-index'] || $GP['customers-add'] || $GP['suppliers-index'] || $GP['suppliers-add']) {
                                 ?>

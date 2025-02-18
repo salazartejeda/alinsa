@@ -14,8 +14,8 @@ class system_settings extends MY_Controller
         }
 
         if (!$this->Owner) {
-            $this->session->set_flashdata('warning', lang('access_denied'));
-            redirect('admin');
+            //$this->session->set_flashdata('warning', lang('access_denied'));
+            //redirect('admin');
         }
         $this->lang->admin_load('settings', $this->Settings->user_language);
         $this->load->library('form_validation');
