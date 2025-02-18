@@ -121,8 +121,8 @@ class Auth extends MY_Controller
     public function create_user()
     {
         if (!$this->Owner) {
-            $this->session->set_flashdata('warning', lang('access_denied'));
-            redirect($_SERVER['HTTP_REFERER']);
+            //$this->session->set_flashdata('warning', lang('access_denied'));
+            //redirect($_SERVER['HTTP_REFERER']);
         }
 
         $this->data['title'] = 'Create User';
@@ -264,7 +264,7 @@ class Auth extends MY_Controller
         }
 
         if ($this->form_validation->run() === true) {
-            if ($this->Owner) {
+            if (1) {
                 if ($id == $this->session->userdata('user_id')) {
                     $data = [
                         'first_name' => $this->input->post('first_name'),
@@ -320,7 +320,7 @@ class Auth extends MY_Controller
                 ];
             }
 
-            if ($this->Owner) {
+            //if ($this->Owner) {
                 if ($this->input->post('password')) {
                     if (DEMO) {
                         $this->session->set_flashdata('warning', lang('disabled_in_demo'));
@@ -331,7 +331,7 @@ class Auth extends MY_Controller
 
                     $data['password'] = $this->input->post('password');
                 }
-            }
+            //}
             //$this->sma->print_arrays($data);
         }
         if ($this->form_validation->run() === true && $this->ion_auth->update($user->id, $data)) {
@@ -389,8 +389,8 @@ class Auth extends MY_Controller
     public function getUsers()
     {
         if (!$this->Owner) {
-            $this->session->set_flashdata('warning', lang('access_denied'));
-            $this->sma->md();
+            //$this->session->set_flashdata('warning', lang('access_denied'));
+            //$this->sma->md();
         }
 
         $this->load->library('datatables');
@@ -404,7 +404,7 @@ class Auth extends MY_Controller
             ->add_column('Actions', "<div class=\"text-center\"><a href='" . admin_url('auth/profile/$1') . "' class='tip' title='" . lang('edit_user') . "'><i class=\"fa fa-edit\"></i></a></div>", 'id');
 
         if (!$this->Owner) {
-            $this->datatables->unset_column('id');
+            //$this->datatables->unset_column('id');
         }
         echo $this->datatables->generate();
     }
@@ -955,8 +955,8 @@ class Auth extends MY_Controller
             admin_redirect('login');
         }
         if (!$this->Owner) {
-            $this->session->set_flashdata('warning', lang('access_denied'));
-            redirect($_SERVER['HTTP_REFERER'] ?? 'admin/welcome');
+            //$this->session->set_flashdata('warning', lang('access_denied'));
+            //redirect($_SERVER['HTTP_REFERER'] ?? 'admin/welcome');
         }
 
         $this->data['error'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
