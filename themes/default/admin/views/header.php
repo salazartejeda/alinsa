@@ -1217,6 +1217,30 @@
                             <?php
                             } ?>
 
+<li class="mm_auth mm_customers mm_suppliers mm_billers">
+                                <a class="dropmenu" href="#">
+                                <i class="fa fa-users"></i>
+                                <span class="text"> <?= lang('people'); ?> </span>
+                                <span class="chevron closed"></span>
+                                </a>
+                                <ul>
+                                    <?php if (!$Owner) {
+                                ?>
+                                    <li id="auth_users">
+                                        <a class="submenu" href="<?= admin_url('users'); ?>">
+                                            <i class="fa fa-users"></i><span class="text"> <?= lang('list_users'); ?></span>
+                                        </a>
+                                    </li>
+                                    <li id="auth_create_user">
+                                        <a class="submenu" href="<?= admin_url('users/create_user'); ?>">
+                                            <i class="fa fa-user-plus"></i><span class="text"> <?= lang('new_user'); ?></span>
+                                        </a>
+                                    </li>
+                                    <?php
+                            } ?>
+                                </ul>
+                            </li>
+
                             <?php if ($GP['customers-index'] || $GP['customers-add'] || $GP['suppliers-index'] || $GP['suppliers-add']) {
                                 ?>
                             <li class="mm_auth mm_customers mm_suppliers mm_billers">
