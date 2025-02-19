@@ -40,6 +40,6 @@ $lang['send_email']         = 'Enviar e-mail';
 $lang['quote_items']        = 'Itens da Cotação';
 $lang['no_quote_selected']  = 'Nenhuma Cotação selecionada. Por favor, selecione pelo menos uma Cotação.';
 $lang['create_sale']        = 'Criar Venda';
-$lang['create_purchase']    = 'Criar Compra';
+$lang['create_purchase']    = 'Criar Entrada';
 $lang['create_invoice']     = 'Criar Fatura';
 $lang['expenses_report']    = 'Relatório de Despesas';

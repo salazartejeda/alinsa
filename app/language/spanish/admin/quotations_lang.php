@@ -25,4 +25,4 @@ $lang['quote_items']        = 'Elementos de la cotización';
 $lang['no_quote_selected']  = 'No hay cotizacion seleccionada. Por favor seleccione al menos una cotizacion.';
 $lang['stamp_sign']         = 'Firma';
 $lang['create_invoice']     = 'Crear Factura';
-$lang['create_purchase']    = 'crear Compra';
+$lang['create_purchase']    = 'crear Entrada';

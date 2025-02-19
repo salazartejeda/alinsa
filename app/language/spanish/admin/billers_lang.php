@@ -18,6 +18,6 @@ $lang['biller_deleted']               = 'Facturador eliminado exitosamente';
 $lang['billers_deleted']              = 'Facturadores eliminados exitosamente';
 $lang['no_biller_selected']           = 'Ningún facturador seleccionado. Por favor, selecciona al menos un facturador.';
 $lang['invoice_footer']               = 'Pie de Página de la Factura';
-$lang['biller_x_deleted_have_sales']  = '¡Acción fallida! El facturador tiene ventas';
-$lang['billers_x_deleted_have_sales'] = 'Algunos facturadores no pueden ser eliminados ya que tienen ventas';
+$lang['biller_x_deleted_have_sales']  = '¡Acción fallida! El facturador tiene pedidos';
+$lang['billers_x_deleted_have_sales'] = 'Algunos facturadores no pueden ser eliminados ya que tienen pedidos';
 

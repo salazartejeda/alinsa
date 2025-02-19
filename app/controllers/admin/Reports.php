@@ -3526,7 +3526,7 @@ class Reports extends MY_Controller
                 $this->excel->getActiveSheet()->getColumnDimension('I')->setWidth(20);
                 $this->excel->getDefaultStyle()->getAlignment()->setVertical('center');
                 $this->excel->getActiveSheet()->getStyle('E2:E' . $row)->getAlignment()->setWrapText(true);
-                $filename = 'Reporte de ventas por item';
+                $filename = 'Reporte de pedido por item';
                 $this->load->helper('excel');
                 create_excel($this->excel, $filename);
             }
