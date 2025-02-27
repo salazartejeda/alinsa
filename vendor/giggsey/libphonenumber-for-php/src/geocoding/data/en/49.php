@@ -2516,7 +2516,7 @@ return array (
   494945 => 'Grossefehn-Timmel',
   494946 => 'Grossefehn-Bagband',
   494947 => 'Aurich-Ogenbargen',
-  494948 => 'Wiesmoor-Marcardsmoor',
+  494948 => 'Wiesmoor-Estanterdsmoor',
   494950 => 'Holtland',
   494951 => 'Weener',
   494952 => 'Rhauderfehn',

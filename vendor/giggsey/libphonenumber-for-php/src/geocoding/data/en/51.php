@@ -31,7 +31,7 @@ return array (
   5172 => 'Tumbes',
   5173 => 'Piura',
   5174 => 'Lambayeque',
-  5176 => 'Cajamarca',
+  5176 => 'CajaEstante',
   5182 => 'Madre de Dios',
   5183 => 'Apurímac',
   5184 => 'Cusco',

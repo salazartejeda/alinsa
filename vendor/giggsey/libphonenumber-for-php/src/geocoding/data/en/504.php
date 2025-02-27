@@ -116,7 +116,7 @@ return array (
   504268 => 'La Lima',
   5042690 => 'El Negrito',
   5042691 => 'Morazán',
-  5042764 => 'Amarat/Marcala',
+  5042764 => 'Amarat/Estantela',
   5042766 => 'Valle De Ángeles',
   5042767 => 'Ojojona',
   5042768 => 'Sabana Grande',

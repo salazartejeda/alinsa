@@ -35,7 +35,8 @@ class Products extends MY_Controller
             $this->form_validation->set_rules('cost', lang('product_cost'), 'required');
             $this->form_validation->set_rules('unit', lang('product_unit'), 'required');
         }
-        $this->form_validation->set_rules('code', lang('product_code'), 'is_unique[products.code]|alpha_dash');
+        //$this->form_validation->set_rules('code', lang('product_code'), 'is_unique[products.code]|alpha_dash');
+        $this->form_validation->set_rules('code', lang('product_code'), 'is_unique[products.code]|regex_match[/^[a-zA-Z0-9\s-]+$/]');
         if (SHOP) {
             $this->form_validation->set_rules('slug', lang('slug'), 'required|is_unique[products.slug]|alpha_dash');
         }
@@ -895,7 +896,7 @@ class Products extends MY_Controller
             $this->form_validation->set_rules('cost', lang('product_cost'), 'required');
             $this->form_validation->set_rules('unit', lang('product_unit'), 'required');
         }
-        $this->form_validation->set_rules('code', lang('product_code'), 'alpha_dash');
+        $this->form_validation->set_rules('code', lang('product_code'), 'regex_match[/^[\w\s-]+$/]');
         if ($this->input->post('code') !== $product->code) {
             $this->form_validation->set_rules('code', lang('product_code'), 'is_unique[products.code]');
         }
@@ -1634,7 +1635,7 @@ class Products extends MY_Controller
                     fclose($handle);
                 }
                 $arr_length = count($arrResult);
-                if ($arr_length > 999) {
+                if ($arr_length > 10000) {
                     $this->session->set_flashdata('error', lang('too_many_products'));
                     redirect($_SERVER['HTTP_REFERER']);
                     exit();

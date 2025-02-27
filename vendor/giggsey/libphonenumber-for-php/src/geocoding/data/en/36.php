@@ -55,7 +55,7 @@ return array (
   3682 => 'Kaposvar',
   3683 => 'Keszthely',
   3684 => 'Siofok',
-  3685 => 'Marcali',
+  3685 => 'Estanteli',
   3687 => 'Tapolca',
   3688 => 'Veszprem',
   3689 => 'Papa',

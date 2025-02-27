@@ -10470,7 +10470,7 @@ return array (
   55833622 => 'Capim - PB',
   55833623 => 'Cuité de Mamanguape - PB',
   55833624 => 'João Pessoa - PB',
-  55833625 => 'Marcação - PB',
+  55833625 => 'Estanteção - PB',
   55833627 => 'Pilõezinhos - PB',
   55833629 => 'São Miguel de Taipu - PB',
   55833633 => 'Baraúna - PB',

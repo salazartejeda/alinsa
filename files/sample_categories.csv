@@ -1,0 +1,9 @@
+Code,Name,Slug,Image name,Parent Category Code (optional),Description
+CA75,Calamar,calamar,no_image.png,CA01,Calamar
+CM76,Camaron,camaron,no_image.png,CM03,Camaron
+CN78,Cangrejo,cangrejo,no_image.png,CJ09,Cangrejo
+CL79,Caracol,caracol,no_image.png,CR11,Caracol
+LB80,Lobster,lobster,no_image.png,LB12,Lobster
+MX81,Mix,mix,no_image.png,MX14,Mix
+PC82,Pescado,pescado,no_image.png,PE16,Pescado
+PL83,Pulpo,pulpo,no_image.png,PU74,Pulpo

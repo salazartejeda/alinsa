@@ -69,7 +69,7 @@ return array (
   'DE' => 'Alemania',
   'DG' => 'Diego García',
   'DJ' => 'Yibuti',
-  'DK' => 'Dinamarca',
+  'DK' => 'DinaEstante',
   'DM' => 'Dominica',
   'DO' => 'República Dominicana',
   'DZ' => 'Argelia',

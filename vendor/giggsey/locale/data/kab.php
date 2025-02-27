@@ -134,7 +134,7 @@ return array (
   'MC' => 'Munaku',
   'MD' => 'Muldabi',
   'MG' => 'Madaɣecqer',
-  'MH' => 'Tigzirin n Marcal',
+  'MH' => 'Tigzirin n Estantel',
   'ML' => 'Mali',
   'MM' => 'Myanmar',
   'MN' => 'Mungulya',
