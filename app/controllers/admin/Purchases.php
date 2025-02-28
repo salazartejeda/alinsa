@@ -1400,7 +1400,7 @@ class Purchases extends MY_Controller
 
     public function purchase_by_csv()
     {
-        $this->sma->checkPermissions('csv');
+        //$this->sma->checkPermissions('csv');
         $this->load->helper('security');
         $this->form_validation->set_message('is_natural_no_zero', $this->lang->line('no_zero_required'));
         $this->form_validation->set_rules('warehouse', $this->lang->line('warehouse'), 'required|is_natural_no_zero');
@@ -1459,7 +1459,7 @@ class Purchases extends MY_Controller
                     fclose($handle);
                 }
                 $arr_length = count($arrResult);
-                if ($arr_length > 499) {
+                if ($arr_length > 10000) {
                     $this->session->set_flashdata('error', lang('too_many_products'));
                     redirect($_SERVER['HTTP_REFERER']);
                     exit();
@@ -1833,6 +1833,10 @@ class Purchases extends MY_Controller
         if (strlen($term) < 1 || !$term) {
             die("<script type='text/javascript'>setTimeout(function(){ window.top.location.href = '" . admin_url('welcome') . "'; }, 10);</script>");
         }
+        // Tomar solo la parte del código antes del primer espacio
+        $parts = explode(' ', $term, 2);
+        $term = trim($parts[0]); // Código del producto
+        $lote = isset($parts[1]) ? trim($parts[1]) : null; // Lote si existe
 
         $analyzed  = $this->sma->analyze_term($term);
         $sr        = $analyzed['term'];
