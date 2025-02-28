@@ -1065,6 +1065,12 @@
                                             <i class="fa fa-plus-circle"></i><span class="text"> <?= lang('add_sale'); ?></span>
                                         </a>
                                     </li>
+                                    <li id="sales_sale_by_csv">
+                                        <a class="submenu" href="<?= admin_url('sales/sale_by_csv'); ?>">
+                                            <i class="fa fa-plus-circle"></i>
+                                            <span class="text"> <?= lang('add_sale_by_csv'); ?></span>
+                                        </a>
+                                    </li>
                                     <?php
                                 }
                                 if ($GP['sales-deliveries']) {
