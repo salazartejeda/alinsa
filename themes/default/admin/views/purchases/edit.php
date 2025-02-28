@@ -1,6 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <script type="text/javascript">
-    var selectedProductIds = [];
     var count = 1, an = 1, po_edit = true, product_variant = 0, DT = <?= $Settings->default_tax_rate ?>, DC = '<?=$default_currency->code?>', shipping = 0,
         product_tax = 0, invoice_tax = 0, total_discount = 0, total = 0,
         tax_rates = <?php echo json_encode($tax_rates); ?>, poitems = {},
@@ -48,7 +47,6 @@
         }
         <?php
     } ?>
-    
         ItemnTotals();
         $("#add_item").autocomplete({
             source: '<?= admin_url('purchases/suggestions'); ?>',
@@ -77,55 +75,17 @@
                     $(this).val('');
                 }
             },
-            
-
             select: function (event, ui) {
-    event.preventDefault();
-
-    // Obtener el ID único del producto seleccionado
-var uniqueId = ui.item.item_id;
-
-console.log('Producto seleccionado:', ui.item);
-console.log('ID único detectado:', uniqueId);
-
-// Si el ID no es válido, mostramos un error
-if (!uniqueId) {
-    bootbox.alert('No se pudo identificar el producto correctamente.');
-    return false;
-}
-
-// Verificamos si el producto ya está en la tabla
-var filaExistente = $('tr[data-item-id="' + uniqueId + '"]');
-
-if (filaExistente.length > 0) {
-    // Si el producto ya está, solo mostramos un mensaje y NO agregamos una nueva fila
-    bootbox.alert('Este producto ya ha sido ingresado.');
-
-    // Aseguramos que la fila mantenga el color azul
-    filaExistente.find('td').addClass('producto-seleccionado');
-
-    $(this).val('');
-    return false; // Detenemos la ejecución para evitar la duplicación
-}
-
-// Si el producto NO está en la tabla, lo agregamos
-selectedProductIds.push(uniqueId);
-//var row = add_purchase_item(ui.item);
-
-//if (row) {
-    $(this).val('');
-
-    // Esperamos un poco para asegurarnos de que la fila ya esté en el DOM
-    setTimeout(function () {
-        var filaProducto = $('tr[data-item-id="' + uniqueId + '"] td');
-
-        if (filaProducto.length) {
-            filaProducto.addClass('producto-seleccionado');
-        }
-    }, 50);
-}}
+                event.preventDefault();
+                if (ui.item.id !== 0) {
+                    var row = add_purchase_item(ui.item);
+                    if (row)
+                        $(this).val('');
+                } else {
+                    bootbox.alert('<?= lang('no_match_found') ?>');
+                }
+            }
         });
-        
 
         $(document).on('click', '#addItemManually', function (e) {
             if (!$('#mcode').val()) {
@@ -212,12 +172,7 @@ selectedProductIds.push(uniqueId);
 
 
 </script>
-<style>
-    .producto-seleccionado {
-    background-color: #007bff !important; /* Azul */
-    color: #fff !important; /* Texto en blanco */
-}
-    </style>
+
 <div class="box">
     <div class="box-header">
         <h2 class="blue"><i class="fa-fw fa fa-edit"></i><?= lang('edit_purchase'); ?></h2>

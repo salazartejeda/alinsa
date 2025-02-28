@@ -290,7 +290,7 @@
                             <div class="form-group">
                                 <?= lang('status', 'postatus'); ?>
                                 <?php
-                                $post = ['pending' => lang('pending'), 'received' => lang('received'),  'ordered' => lang('ordered')];
+                                $post = ['received' => lang('received'), 'pending' => lang('pending'), 'ordered' => lang('ordered')];
                                 echo form_dropdown('status', $post, ($_POST['status'] ?? ''), 'id="postatus" class="form-control input-tip select" data-placeholder="' . $this->lang->line('select') . ' ' . $this->lang->line('status') . '" required="required" style="width:100%;" ');
                                 ?>
                             </div>
@@ -356,8 +356,7 @@
                                         <div class="input-group-addon" style="padding-left: 10px; padding-right: 10px;">
                                             <i class="fa fa-2x fa-barcode addIcon"></i></a></div>
                                         <?php echo form_input('add_item', '', 'class="form-control input-lg" id="add_item" placeholder="' . $this->lang->line('add_product_to_order') . '"'); ?>
-                                        <?php if ($Owner || $Admin || $GP['products-add']) {
-                                    ?>
+                                        <?php if ($Owner || $Admin || $GP['products-add']) {?>
                                         <div class="input-group-addon" style="padding-left: 10px; padding-right: 10px;">
                                             <a href="<?= admin_url('products/add') ?>" id="addManually1"><i
                                                     class="fa fa-2x fa-plus-circle addIcon" id="addIcon"></i></a></div>
