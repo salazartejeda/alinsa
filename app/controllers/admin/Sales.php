@@ -2368,6 +2368,10 @@ class Sales extends MY_Controller
         if (strlen($term) < 1 || !$term) {
             die("<script type='text/javascript'>setTimeout(function(){ window.top.location.href = '" . admin_url('welcome') . "'; }, 10);</script>");
         }
+        // Tomar solo la parte del código antes del primer espacio
+        $parts = explode(' ', $term, 2);
+        $term = trim($parts[0]); // Código del producto
+        $lote = isset($parts[1]) ? trim($parts[1]) : null; // Lote si existe
 
         $analyzed  = $this->sma->analyze_term($term);
         $sr        = $analyzed['term'];
