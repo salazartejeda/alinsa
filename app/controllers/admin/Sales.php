@@ -2081,7 +2081,7 @@ class Sales extends MY_Controller
 
     public function sale_by_csv()
     {
-        $this->sma->checkPermissions('csv');
+        //$this->sma->checkPermissions('csv');
         $this->load->helper('security');
         $this->form_validation->set_rules('userfile', lang('upload_file'), 'xss_clean');
         $this->form_validation->set_message('is_natural_no_zero', lang('no_zero_required'));
@@ -2141,7 +2141,7 @@ class Sales extends MY_Controller
                     fclose($handle);
                 }
                 $arr_length = count($arrResult);
-                if ($arr_length > 499) {
+                if ($arr_length > 10000) {
                     $this->session->set_flashdata('error', lang('too_many_products'));
                     redirect($_SERVER['HTTP_REFERER']);
                     exit();

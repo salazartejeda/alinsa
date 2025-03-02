@@ -849,15 +849,16 @@ function loadItems() {
                     '<td class="text-right"><input class="form-control input-sm text-right rproduct_tax" name="product_tax[]" type="hidden" id="product_tax_' +
                     row_no +
                     '" value="' +
-                    pr_tax.id +
+                    (pr_tax && pr_tax.id ? pr_tax.id : '') +
                     '"><span class="text-right sproduct_tax" id="sproduct_tax_' +
                     row_no +
                     '">' +
-                    (pr_tax_rate ? '(' + pr_tax_rate + ')' : '') +
-                    ' ' +
-                    formatMoney(pr_tax_val * item_qty) +
+                    (pr_tax && pr_tax.name ? pr_tax.name : 'N/A') + // Si no hay impuesto, muestra "N/A"
                     '</span></td>';
             }
+            
+            
+            
             tr_html +=
                 '<td class="text-right"><span class="text-right ssubtotal" id="subtotal_' +
                 row_no +
